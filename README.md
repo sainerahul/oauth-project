@@ -23,6 +23,8 @@ npm run cors
 
 ## Authors
 [@sainerahul](https://github.com/sainerahul)
+## Demo
+![oauth-project](https://user-images.githubusercontent.com/48623718/158060160-a84bc5c6-8077-4ba7-a635-8845cc7dcb99.gif)
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
