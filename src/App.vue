@@ -1,31 +1,30 @@
 <template>
   <div id="app">
     <div>
-    <img alt="Vue logo" height="30px" src="./assets/logo.png">
-    <br>
-    <router-link to="/">Home</router-link> | 
-    <router-link to="/profile">Profile</router-link> | 
-    <router-link to="/repository">Repository</router-link> | 
-    <router-link to="/starred-repo">Starred Repository</router-link> 
+      <img alt="Vue logo" height="30px" src="./assets/logo.png" />
+      <br />
+      <router-link to="/">Home</router-link> |
+      <router-link to="/profile">Profile</router-link> |
+      <router-link to="/repository">Repository</router-link> |
+      <router-link to="/starred-repo">Starred Repository</router-link>
     </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import auth from "../src/authenitcation/index"
+import auth from "../src/authenitcation/index";
 export default {
-  data(){
-    return{
-      isLoggedIn:false
-    }
+  data() {
+    return {
+      isLoggedIn: false,
+    };
   },
-  created(){
+  created() {
     this.isLoggedIn = auth.isLoggedIn();
   },
-  methods:{
-  }
-}
+  methods: {},
+};
 </script>
 
 <style>

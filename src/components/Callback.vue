@@ -5,35 +5,29 @@
 </template>
 
 <script>
-
-import auth from "../authenitcation/index"
+import auth from "../authenitcation/index";
 export default {
-  name: 'callback-component',
-  data(){
-    return{
-      
-    }
+  name: "callback-component",
+  data() {
+    return {};
   },
-  async created(){
-        await this.getAccess();
+  async created() {
+    await this.getAccess();
   },
-  methods:{
-  async getAccess(){
-      try{
-            let code = this.$route.query.code;
-            await auth.getAccessToken(code);
-            this.$router.push('/profile')
+  methods: {
+    async getAccess() {
+      try {
+        let code = this.$route.query.code;
+        await auth.getAccessToken(code);
+        this.$router.push("/profile");
+      } catch (error) {
+        alert(error);
+        this.$router.push("/");
+        auth.logout();
       }
-      catch(error){
-            alert(error);
-            this.$router.push('/')
-            auth.logout();
-      }
-  }
-  }
-}
+    },
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

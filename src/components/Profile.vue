@@ -2,37 +2,38 @@
   <div id="profile">
     <h1>Your Profile</h1>
     <div id="profile-list">
-  <ul>
-    <li v-for="(item,name,index) in userData" :key="index">{{name}}: {{ item }}</li>
-  </ul>
+      <ul>
+        <li v-for="(item, name, index) in userData" :key="index">
+          {{ name }}: {{ item }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import profile from "../services/user/UserProfileService"
+import profile from "../services/user/UserProfileService";
 
 export default {
-  name: 'profile-component',
-  data(){
+  name: "profile-component",
+  data() {
     return {
-      userData:{}
-    }
+      userData: {},
+    };
   },
-    async created(){
-     await this.getUserInfo();
+  async created() {
+    await this.getUserInfo();
   },
-  methods:{
-    async getUserInfo(){
-      try{
+  methods: {
+    async getUserInfo() {
+      try {
         this.userData = await profile.getUserInfo();
+      } catch (error) {
+        alert(error);
       }
-      catch(error){
-        alert(error)
-      }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
