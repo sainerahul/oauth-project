@@ -11,6 +11,9 @@ const router = new VueRouter({
   mode: "history",
   base: "/",
 });
+Vue.config.errorHandler = (err, vm, info) => {
+  console.error(err, vm, info);
+};
 new Vue({
   router,
   render: (h) => h(App),

@@ -8,11 +8,12 @@ export default {
     let token = auth.getTokenFromSession();
     return new Promise((resolve, reject) => {
       axios
-        .get(`${userRepoUrl}${visibility}`, {
+        .get(userRepoUrl, {
           headers: {
             Authorization: `token ${token}`,
           },
           params: {
+            visibility,
             sort,
           },
         })

@@ -21,9 +21,10 @@ export default {
         await auth.getAccessToken(code);
         this.$router.push("/profile");
       } catch (error) {
-        alert(error);
+        alert(`Something went wrong`);
         this.$router.push("/");
         auth.logout();
+        throw TypeError(new Error(error));
       }
     },
   },

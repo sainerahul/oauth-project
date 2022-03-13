@@ -29,7 +29,9 @@ export default {
       try {
         this.userData = await profile.getUserInfo();
       } catch (error) {
-        alert(error);
+        alert(`Something went wrong`);
+        this.$router.push("/");
+        throw TypeError(new Error(error));
       }
     },
   },

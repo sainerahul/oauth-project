@@ -58,7 +58,9 @@ export default {
       try {
         this.repoData = await repository.getRepoInfo(visibility, sorting);
       } catch (error) {
-        alert(error);
+        alert(`Something went wrong`);
+        this.$router.push("/");
+        throw TypeError(new Error(error));
       }
     },
   },
