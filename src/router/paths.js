@@ -26,6 +26,16 @@ export default [
         }
     },
     {
+        path:"/starred-repo",
+        name:"starredRepository",
+        component: () => import(`@/components/Starred.vue`),
+        beforeEnter: (to,from,next)=>{
+            if(auth.isLoggedIn()) next();
+            else next({path:'/unauthorized'})
+            
+        }
+    },
+    {
         path:"/callback",
         name:"callback",
         component: () => import(`@/components/Callback.vue`)

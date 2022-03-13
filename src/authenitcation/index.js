@@ -2,10 +2,11 @@ import config from "../shared/config";
 import UserAuthService from "../services/user/UserAuthService"
 const loginUrl = config['LOGIN_URL'];
 const client_id = config['CLIENT_ID'];
-const client_secret = config['CLIENT_SECRET'];
+const client_secret = process.env.VUE_APP_CLIENT_SECRET
+const scope = config['LOGIN_URL_SCOPE'];
 export default{
     login: () =>{
-        window.location.replace(`${loginUrl}?client_id=${client_id}`);
+        window.location.replace(`${loginUrl}?client_id=${client_id}&scope=${scope}`);
     },
     logout:()=>{
         sessionStorage.clear();

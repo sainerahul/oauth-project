@@ -1,9 +1,11 @@
 <template>
   <div id="profile">
-    <h1>Profile</h1>
-  <ul style="list-style-type:none;">
+    <h1>Your Profile</h1>
+    <div id="profile-list">
+  <ul>
     <li v-for="(item,name,index) in userData" :key="index">{{name}}: {{ item }}</li>
   </ul>
+    </div>
   </div>
 </template>
 
@@ -18,12 +20,23 @@ export default {
     }
   },
     async created(){
+     await this.getUserInfo();
+  },
+  methods:{
+    async getUserInfo(){
+      try{
         this.userData = await profile.getUserInfo();
-        console.log(this.userData)
+      }
+      catch(error){
+        alert(error)
+      }
+    }
   }
 }
 </script>
 
 <style>
-
+#profile-list {
+  text-align: left;
+}
 </style>

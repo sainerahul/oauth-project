@@ -5,7 +5,8 @@
     <br>
     <router-link to="/">Home</router-link> | 
     <router-link to="/profile">Profile</router-link> | 
-    <router-link to="/repository">Repository</router-link>
+    <router-link to="/repository">Repository</router-link> | 
+    <router-link to="/starred-repo">Starred Repository</router-link> 
     </div>
     <router-view></router-view>
   </div>

@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve --port 8000",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "cors":"node cors-anywhere.js"
   },
   "dependencies": {
     "axios": "^0.26.1",
